@@ -1,5 +1,6 @@
 package tn.esprit.tpfoyer.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -41,6 +42,11 @@ public class BlocRestController {
     public Bloc modifyChambre(@RequestBody Bloc b) {
         Bloc bloc = blocService.modifyBloc(b);
         return bloc;
+    }
+    @Operation(description="Affecter des chambres à un bloc")
+    @PutMapping("/affecter-chambres-a-bloc")
+    public Bloc affecterChambresABloc(@RequestParam("numChambres") List<Long> numChambres,@RequestParam("idBloc") Long idBloc){
+        return blocService.affecterChambresABloc(numChambres,idBloc);
     }
 
 }

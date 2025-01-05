@@ -36,4 +36,10 @@ public class FoyerRestController {
     public void removeFoyer(@PathVariable("foyer-id") Long fId) {
         foyerService.removeFoyer(fId);
     }
+    //http://localhost:8089/foyer/foyerU/modify-foyer
+    @Operation(description = "Modifier un foyer")
+    @PutMapping("/update-foyer")
+    public Foyer updateFoyer(@RequestBody Foyer foyer) {
+        return foyerService.updateFoyer(foyer);
+    }
 }

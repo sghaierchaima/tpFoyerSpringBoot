@@ -7,7 +7,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
-import java.util.Date;
+
+import java.sql.Date;
 import java.util.Set;
 
 @Getter
@@ -33,7 +34,7 @@ public class Reservation implements Serializable {
         return anneeUniversitaire;
     }
 
-    public boolean isEstValide() {
+    public boolean getestValide() {
         return estValide;
     }
 
